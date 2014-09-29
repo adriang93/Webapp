@@ -1,0 +1,112 @@
+<ui:composition template="../WEB-INF/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+    <ui:define name="content">
+        <h:form id="form">
+            <p:dataTable id="dataTable" var="person" value="#{persons.lazyModel}" styleClass="userDataTableStyle"
+                         paginator="true" rows="5" selection="#{persons.selectedPersons}"
+                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         lazy="true" rowsPerPageTemplate="5, 10,15">
+                <f:facet name="header">
+                    Person List
+                </f:facet>  
+                <p:column selectionMode="multiple" style="width:18px" />  
+                <p:column  sortBy="#{person.id}">
+                    <f:facet name="header">
+                        <h:outputText value="Id" />
+                    </f:facet>
+                    <p:commandLink value="#{person.id}" update=":personDetailForm:display" 
+                                   oncomplete="personDetailDialog.show()"  title="View" 
+                                   actionListener="#{persons.setSelectedPerson(person)}">  
+                    </p:commandLink>
+                </p:column>
+
+                <p:column sortBy="#{person.fname}">
+                    <f:facet name="header">
+                        <h:outputText value="Firstname" />
+                    </f:facet>
+                    <h:outputText value="#{person.fname}" />
+                </p:column>
+
+                <p:column sortBy="#{person.age}">
+                    <f:facet name="header">
+                        <h:outputText value="Age" />
+                    </f:facet>
+                    <h:outputText value="#{person.age}" />
+                </p:column>
+
+                <f:facet name="footer">
+                    <p:commandButton value="New Person" 
+                                     oncomplete="newPersonDialog.show()" icon="ui-icon-star" title="New Person"/>
+                    <p:commandButton value="Delete Persons" 
+                                     actionListener="#{persons.deletePersons}"
+                                     update="dataTable" icon="ui-icon-trash"/>
+                </f:facet>
+            </p:dataTable>
+        </h:form>   
+
+        <p:dialog header="Person Detail" widgetVar="personDetailDialog" resizable="false" id="personDetail" modal="true" > 
+            <h:form id="personDetailForm">
+                <p:panelGrid id="display" columns="2">    
+                    <h:outputText value="Id:"/>
+                    <h:outputText value="#{persons.selectedPerson.id}" />
+                    <h:outputText value="First name :"/>
+                    <h:inputText value="#{persons.selectedPerson.fname}" required="true" requiredMessage="Please Enter Name!"/>
+                    <h:outputText value="Age :"/>
+                    <h:inputText value="#{persons.selectedPerson.age}" required="true" requiredMessage="Please Enter Age!"/>
+                    <f:facet name="footer">
+                        <p:commandButton value="Update" update=":form:dataTable, :growl"  
+                                         oncomplete="handleSubmitRequest(xhr, status, args, 'personDetail','personDetailForm'); " 
+                                         actionListener="#{persons.updatePerson}"/>
+                    </f:facet>
+                </p:panelGrid> 
+            </h:form>
+        </p:dialog> 
+
+
+        <p:dialog header="New Person" widgetVar="newPersonDialog" resizable="false" id="newPerson" modal="true"> 
+            <h:form id="newPersonForm">
+                <p:panelGrid id="displayNewPerson" columns="2" > 
+
+                    <h:outputText value="Id :"></h:outputText>
+                    <p:inputText value="#{persons.newPerson.id}" required="true" requiredMessage="Please Enter Id!"/>
+
+                    <h:outputText value="First name :"></h:outputText>
+                    <p:inputText value="#{persons.newPerson.fname}" required="true" requiredMessage="Please Enter Name!" />
+
+                    <h:outputText value="Age :"></h:outputText>
+                    <p:inputText value="#{persons.newPerson.age}" required="true" requiredMessage="Please Enter Age!" />
+                    <f:facet name="footer">
+                        <p:commandButton value="Submit" update=":form:dataTable, :growl"  
+                                         oncomplete=" handleSubmitRequest(xhr, status, args, 'newPerson','newPersonForm');" 
+                                         actionListener="#{persons.insertPerson}"/>
+                        <p:commandButton type="reset" value="Reset"></p:commandButton>                            
+                    </f:facet>
+                </p:panelGrid>  
+            </h:form>
+        </p:dialog> 
+
+        <p:growl id="growl" showDetail="true" life="5000" />
+
+        <script type="text/javascript">
+            function handleSubmitRequest(xhr, status, args, dialogId, formName) {
+                dialog = jQuery('#' + dialogId);
+                if (args.validationFailed) {
+                    dialog.effect("shake", {times: 3}, 100);
+                } else {
+                    clearForm(formName);
+                    newPersonDialog.hide();
+                    personDetailDialog.hide();
+                }
+            }
+            function clearForm(formName) {
+                jQuery('#' + formName).each(function() {
+                    this.reset();
+                });
+            }
+        </script> 
+    </ui:define>
+</ui:composition>

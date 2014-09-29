@@ -1,0 +1,5 @@
+*** File to upload ***
+
+This is just a file to use as an example to
+for the upload page.
+

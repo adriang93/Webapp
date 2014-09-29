@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<faces-config version="2.0"
+    xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+
+<!-- Redirect -->
+ <navigation-rule>
+    <from-view-id>/redirect/from.xhtml</from-view-id>
+    <navigation-case>
+        <from-outcome>to</from-outcome>
+        <to-view-id>/redirect/to.xhtml</to-view-id>
+        <redirect/>
+    </navigation-case>
+</navigation-rule>       
+    
+   
+<!-- Static rule -->
+<navigation-rule>
+    <from-view-id>/rules/static/from.xhtml</from-view-id>
+    <navigation-case>
+        <from-outcome>goto</from-outcome>
+        <to-view-id>/rules/static/to.xhtml</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+<!-- Dynamic rule -->
+<navigation-rule>
+    <from-view-id>/rules/dynamic/login.xhtml</from-view-id>
+    <navigation-case>
+        <from-action>#{Login.doLogin}</from-action>
+        <from-outcome>success</from-outcome>
+        <to-view-id>/rules/dynamic/success.xhtml</to-view-id>
+    </navigation-case>
+    <navigation-case>
+        <from-action>#{Login.doLogin}</from-action>
+        <from-outcome>failure</from-outcome>
+        <to-view-id>/rules/dynamic/failure.xhtml</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+<!-- Conditinal navigation rule (rules applies in written order) -->
+<navigation-rule>
+    <from-view-id>/rules/conditional/main.xhtml</from-view-id>
+    <navigation-case>
+        <from-outcome>submit</from-outcome>
+        <if>#{conditional.boolval}</if>
+        <to-view-id>/rules/conditional/success.xhtml</to-view-id>
+    </navigation-case>
+    <navigation-case>
+        <from-outcome>submit</from-outcome>
+        <to-view-id>/rules/conditional/failure.xhtml</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+</faces-config>

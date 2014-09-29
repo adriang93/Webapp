@@ -1,0 +1,30 @@
+
+*** Testing REST ***
+
+cURL is a nice tool to test RESTful services
+
+Testing the resources from command line. 
+NOTE: See Json further below
+--------------------------------------------
+
+# GET (find). 
+curl -v -H "Accept: application/json" http://localhost:8080/rest_backend/webresources/response 
+curl -v -H "Accept: application/json" http://localhost:8080/rest_backend/webresources/response/11
+curl -v -H "Accept: application/json" http://localhost:8080/rest_backend/webresources/response/count
+
+# NOTE Quotes!
+curl -v -H "Accept: application/json" "http://localhost:8080/rest_backend/webresources/response/range?fst=2&count=10"
+
+# POST (create)
+curl -v  http://localhost:8080/rest_backend/webresources/response --request POST --data "id=999&fname=***CREATE***&age=999"
+
+# PUT (update)
+# Must have pnumb in request
+curl -v http://localhost:8080/rest_backend/webresources/response/11 --request PUT --data "fname=***UPDATE***"
+
+# DELETE (delete)
+curl -v http://localhost:8080/rest_backend/webresources/response/11 --request DELETE
+
+
+
+

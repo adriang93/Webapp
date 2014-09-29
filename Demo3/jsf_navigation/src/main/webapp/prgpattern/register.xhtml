@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <!-- This is to get data back for editing, try comment out and run -->
+    <f:metadata>
+        <f:viewParam name="fname" value="#{userBean.firstName}" />
+        <f:viewParam name="lname" value="#{userBean.lastName}" />
+        <f:viewParam name="sex" value="#{userBean.sex}" />
+    </f:metadata>
+
+    <h:head>
+        <title>PRG Pattern</title>
+    </h:head>
+    <h:body>
+
+
+        <h:form>
+            <h2>Prg Pattern</h2>
+            <h4>Registration Form (register.xhtml)</h4>
+            <ul>
+                <li>Watch HTTPMonitor and GF output</li>
+                <li>NOTE: Browser address field when submitting </li> 
+            </ul>
+
+            <h:panelGrid columns="3" >
+                <h:outputLabel value="First Name" />
+                <h:inputText label="First Name"
+                             id="fname" value="#{userBean.firstName}"
+                             required="true"/>
+                <h:message for="fname" />
+                <h:outputLabel value="Last Name" />
+                <h:inputText label="Last Name"
+                             id="lname" value="#{userBean.lastName}"
+                             required="true"/>
+                <h:message for="lname" />
+                <h:outputLabel value="Sex" />
+                <h:selectOneRadio label="Sex"
+                                  id="sex" value="#{userBean.sex}" required="true">
+                    <f:selectItems value="#{userBean.sexes}"/>
+                </h:selectOneRadio>
+                <h:message for="sex" />
+            </h:panelGrid>
+            <!-- The query parameters on the action attribute cause JSF to do the
+                 POST REDIRECT GET pattern 
+                Also possible to add in faces-config <redirect include-view-params="true"/>
+            -->
+            <h:commandButton value="Register" 
+                             action="confirm?faces-redirect=true&amp;includeViewParams=true"/>
+        </h:form>
+        <h:messages/>
+    </h:body>
+</html>

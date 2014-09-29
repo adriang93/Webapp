@@ -1,0 +1,32 @@
+<div>
+    <!--Body content-->
+    <h2>Person New</h2>
+    <a href="#persons">Back</a>
+    <table class="table">
+        <tr>
+            <td>This is normally set by database, just for now</td>
+            <td>
+                <input ng-model="person.id" type="number" value="{{person.id}}"/>
+            </td>
+        <tr>
+            <td>Name </td>
+            <td>
+                <input ng-model="person.fname" type="text" value="{{person.fname}}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td>
+                <input ng-model="person.age" type="number" value="{{person.age}}"/>
+            </td>
+        </tr>
+    </table>
+
+
+    <div class="btn-group">
+        <input type="button" value="Cancel" class="btn btn-default" ng-controller="NavigationCtrl" ng-click="navigate('#persons')"/>
+        <input type="button" value="Save" class="btn btn-default" ng-click="save()"/>
+    </div>
+    <p>Debug: {{person.id}}{{person.fname}}{{person.age}}</p>
+</div>
+

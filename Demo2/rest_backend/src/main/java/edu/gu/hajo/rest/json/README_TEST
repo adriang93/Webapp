@@ -1,0 +1,21 @@
+
+*** Testing REST ***
+
+cURL is a nice tool to test RESTful services
+
+Testing the resources from command line. 
+NOTE: See Json further below
+
+Testing JSON
+--------------------------------------------
+# GET (read). There are 3 resources, person, cond and response
+curl -v -H "Accept: application/json" http://localhost:8080/rest_backend/webresources/json
+curl -v -H "Accept: application/json" "http://localhost:8080/rest_backend/webresources/json/range?fst=2&count=10"
+
+
+# POST (create). NOTE : Must use <input type="number" to get correct JSon, see rest_frontend
+curl -v  -H "Content-Type: application/json" http://localhost:8080/rest_backend/webresources/json --request POST --data '{"id":999, "fname":"TEST", "age":999}'
+
+# PUT (update)
+# Must have pnumb in request
+curl -v -H "Content-Type: application/json" http://localhost:8080/rest_backend/webresources/json/11 --request PUT --data '{"fname":"NOT_PELLE", "age": 44}'

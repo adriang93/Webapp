@@ -1,0 +1,16 @@
+
+root { 
+    display: block;
+}
+
+body {
+    margin: auto;
+    width : 50em;
+}
+
+/* This is a PrimeFaces global setting */
+.ui-widget, .ui-widget .ui-widget {
+    font-size: 90%;
+}
+
+

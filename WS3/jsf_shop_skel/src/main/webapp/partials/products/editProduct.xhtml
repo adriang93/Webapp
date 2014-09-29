@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <h:body>
+        
+        <ui:composition template="/WEB-INF/template.xhtml">
+            <ui:define name="metadata">
+                <f:metadata>
+                    <f:viewParam name="id" value="#{editProductBB.id}"  />
+                    <f:viewParam name="name" value="#{editProductBB.name}"  />
+                    <f:viewParam name="price" value="#{editProductBB.price}"  />
+                </f:metadata>
+            </ui:define>
+
+            <ui:define name="top">
+                <h2>Product Detail</h2>
+                <h:link outcome="productList.xhtml">Back</h:link>
+            </ui:define>
+
+            <ui:define name="content">
+                <h:form>
+                    <h:panelGrid columns="2" class="table">
+                        <h:outputLabel value="Id"/>
+                        <h:outputText value="#{editProductBB.id}"/> 
+                        <h:outputLabel value="Name" />
+                        <h:inputText value="#{editProductBB.name}"/> 
+                        <h:outputLabel value="Price" />
+                        <h:inputText value="#{editProductBB.price}"/> 
+                    </h:panelGrid>
+                    <div class="btn-group">
+                        <h:commandButton value="Cancel" immediate="true" class="btn btn-default"
+                                         action="productList?faces-redirect=true" />
+                        <h:commandButton value="Delete" actionListener="#{editProductCtrl.delete}" 
+                                         action="productList?faces-redirect=true" 
+                                         class="btn btn-default"/>
+                        <h:commandButton value="Save" action="#{editProductCtrl.update}" class="btn btn-default"/>
+                    </div>
+                </h:form>
+            </ui:define>
+
+            <ui:define name="bottom">
+
+            </ui:define>
+        </ui:composition>
+        
+    </h:body>
+</html>

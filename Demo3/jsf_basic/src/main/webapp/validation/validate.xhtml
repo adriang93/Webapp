@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Validation</title>
+    </h:head>
+    <h:body>
+        <h1>Validation</h1>
+        <h2>Using JSF validation tags (press enter)</h2>
+        <p>In real life you should use localized message bundles (now hard coded)   </p>
+        <h:form id="jsf">
+            <h:panelGrid columns="3" >
+                <h:outputLabel for="txtValue1" value="Input a number between 1 and 10" />
+                <h:inputText id="txtValue1"  validatorMessage="Must be 1-10 (incl) ">
+                    <f:validateLongRange minimum="1" maximum="10"/> 
+                </h:inputText>
+                <h:message for="txtValue1" showSummary="true" showDetail="false" style="color: red" />
+                <h:outputLabel for="txtData1" value="Input a string 1-8 chars long" />
+                <h:inputText id="txtData1" validatorMessage="Length must be 1-8 chars">
+                    <f:validateLength minimum="1" maximum="8" />
+                </h:inputText>
+                <h:message for="txtData1" showSummary="true" showDetail="false" style="color: red" />
+            </h:panelGrid>
+            <h:commandButton id="btnOK1" value="OK"/>
+        </h:form>
+
+
+        <hr/>
+
+        <h2>Using validation in bean (Bean Validation API)</h2>
+        <h:form >
+            <h:panelGrid columns="3" >
+                <h:outputLabel for="txtValue2" value="Input a number between 1 and 10" />
+                <h:inputText id="txtValue2" value="#{validate.value}" />
+                <h:message for="txtValue2" showSummary="true" showDetail="false" style="color: red" />
+                <h:outputLabel for="txtData2" value="Input a string 1-8 chars long" />
+                <h:inputText id="txtData2" value="#{validate.data}" />
+                <h:message for="txtData2" showSummary="true" showDetail="false" style="color: red" />
+            </h:panelGrid>
+            <h:commandButton id="btnOK2" value="OK" actionListener="#{validate.actionListener}"/>
+            <!-- immediate will bypass validation i.e. avoiding errors -->
+            <h:commandButton id="btnCancel2" value="Cancel (immediate=true)" immediate="true"
+                             actionListener="#{validate.actionListener}"/>
+        </h:form>
+
+
+    </h:body>
+</html>
+

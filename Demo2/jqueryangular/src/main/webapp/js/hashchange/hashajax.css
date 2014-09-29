@@ -1,0 +1,17 @@
+
+root { 
+    display: block;
+}
+
+/* Mark selected link */
+li.current {
+    background-color: lightgray; 
+}
+
+li{
+    display: inline;
+}
+
+.dialog {
+
+}

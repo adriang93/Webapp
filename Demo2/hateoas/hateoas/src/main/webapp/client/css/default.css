@@ -1,0 +1,31 @@
+
+root { 
+    display: block;
+}
+
+#pageNav ul{
+    margin: 0; /* Must have */
+    padding: 0;
+}
+
+#pageNav ul li{
+    display: inline;
+}
+
+.dialog {
+    background-color: #a89090;
+    border-style: double;
+    position: absolute;   /* must have */
+    z-index: 3;
+    -moz-box-shadow:    3px 3px 5px 6px #ccc;
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+    box-shadow:         3px 3px 5px 6px #ccc;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    width: 30%;
+}
+
+.table tr:hover {
+   background-color: #d7e1ee;
+}

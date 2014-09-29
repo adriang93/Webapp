@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+    This is an Angular app (ng-app)
+-->
+<html lang="en" ng-app="LoginApp">
+    <head>
+        <title>Login App</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../../libs/jquery/jquery.js"></script>
+        <script src="../../libs/angular/angular.js"></script>
+        <script src="../../libs/angular/angular-route.js"></script>
+        <script src="../../libs/angular/angular-cookies.js"></script>
+        <script src="../../libs/angular/angular-base64.js"></script>
+      
+        <script src="js/app.js"></script>   
+        <script src="js/controllers.js"></script>  
+        <script src="js/services.js"></script>  
+      
+    </head>
+    <body>
+        <h1>Login App (HTTP Basic Auth to REST backend)</h1>
+        <h3>An illustration how to put authentication in the request header</h3>
+        <p>
+            Try login with (qqq, passwd 111) and call then call API<br/>
+            Try login with something else and call. <br/>
+            Check server output and Http monitor (Headers)
+        </p>
+        <div ng-view ></div>
+    </body>
+</html>

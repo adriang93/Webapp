@@ -1,0 +1,11 @@
+** README ***
+
+This is a front_end app for the rest_backend
+Using AngualarJS
+
+The Angular app is in folder personregistry/app
+There's also a test folder (using Jasmine).
+Simple examples of testing.
+
+There's also a test demonstrating the Java REST client API.
+See Test Packages

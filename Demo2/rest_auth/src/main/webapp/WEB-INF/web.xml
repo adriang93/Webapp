@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+    <!--
+    <security-constraint>
+         The below are protected (NOTE GET is possible by anyone
+        <web-resource-collection>
+            <web-resource-name>Private REST API</web-resource-name>
+            <url-pattern>/webresources/private/*</url-pattern>
+             Uncomment GET to test browser response (shows login dialog)
+            for URL http://localhost:8080/rest_login/webresources/private
+            <http-method>GET</http-method>     
+            
+            <http-method>POST</http-method>
+            <http-method>HEAD</http-method>
+            <http-method>PUT</http-method>
+            <http-method>OPTIONS</http-method>
+            <http-method>TRACE</http-method>
+            <http-method>DELETE</http-method>
+        </web-resource-collection>
+        -->
+        <!--<auth-constraint>
+            <description>Only admin may do the above</description>
+            <role-name>adminRole</role-name>
+        </auth-constraint>-->
+        <!--  Use HTTPS
+        <user-data-constraint>
+        <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+    -->
+    <!--<login-config>
+         
+            By using this the credentials are sent on every request =>
+            no state (session handling) on server 
+        
+        <auth-method>BASIC</auth-method>
+        This is the default GlassFish file realm 
+        <realm-name>file</realm-name>
+    </login-config>-->
+    <!-- 
+        Security roles used by this web application,
+        mapped to principals defined in the GlassFish file realm
+        see glassfish-web.xml
+    -->
+    <!--<security-role>
+        <description/>
+        <role-name>userRole</role-name>
+    </security-role>
+    <security-role>
+        <description/>
+        <role-name>adminRole</role-name>
+    </security-role>-->
+</web-app>

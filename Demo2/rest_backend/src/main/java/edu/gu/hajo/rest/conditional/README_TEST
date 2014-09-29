@@ -1,0 +1,18 @@
+*** README rest cache ****
+
+Testing  PersonConditionalResource  class
+-----------------------------------------
+# Testing conditional GET's
+# First get Etag ... (see response)
+curl -v http://localhost:8080/rest_backend/webresources/cond/11
+
+# ..then use Etag in request (use matching and not etags in request)
+curl -v -H 'If-None-Match: "c67cbd......."' http://localhost:8080/rest_backend/webresources/cond/11
+
+
+# Testing conditional updates
+# First get Etag ... (see response)
+curl -v http://localhost:8080/rest_backend/webresources/cond/11 
+
+# ..then use Etag in request (use matching and not etags in request)
+curl -v -H 'If-Match: "c67cbd......."' http://localhost:8080/service_based/webresources/cond/11 --request PUT --data "fname=FIA"

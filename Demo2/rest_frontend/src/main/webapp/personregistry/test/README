@@ -1,0 +1,10 @@
+
+*** Testing ***
+
+Simple (primitive) use of Jasmine to test
+the PersonRegProxy (app/js/Services.js). 
+
+Tests are in spec/ServiceSpec.js
+(also some other test of simple JS "classes").
+
+Both rest_frontend and _backend must run.

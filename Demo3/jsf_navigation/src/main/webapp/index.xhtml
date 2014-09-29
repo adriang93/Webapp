@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>JSF Navigation</title>
+    </h:head>
+    <h:body>
+        <h1>JSF Navigation Model</h1>
+        <h:panelGrid columns="1">
+            <h:link value="Redirects" outcome="redirect/from.xhtml" />
+            <h:link value="PRG-pattern (with view params), see register.xhtml" outcome="prgpattern/register.xhtml" />
+            <h:link value="Implicit navigation" outcome="implicit/from.xhtml" />
+            <h:outputLabel value="For the below see faces-config.xml" />
+            <h:link value="Rules static navigation" outcome="rules/static/from.xhtml" />
+            <h:link value="Rules dynamic navigation" outcome="rules/dynamic/login.xhtml" />
+            <h:link value="Rules dynamic conditional navigation" outcome="rules/conditional/main.xhtml" />
+            
+            <!--
+            <strong>PRG pattern</strong><br/>        
+            <h:link value="PRG using view params" outcome="prg/viewparam/register.xhtml" /><br/>-->
+        </h:panelGrid>
+    </h:body>
+</html>
+

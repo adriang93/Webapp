@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <f:metadata>
+        <f:viewParam name="fname" value="#{userBean.firstName}" />
+        <f:viewParam name="lname" value="#{userBean.lastName}" />
+        <f:viewParam name="sex" value="#{userBean.sex}" />
+    </f:metadata>
+
+    <h:head>
+        <title>PRG PatternRegistration</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h2>PRG Pattern</h2>
+            <h4>done.xhtml</h4>
+            <h:panelGrid columns="2" >
+                <h:outputLabel value="First Name" />
+                <h:outputLabel value="#{userBean.firstName}" />
+                <h:outputLabel value="Last Name" />
+                <h:outputLabel value="#{userBean.lastName}"/>
+                <h:outputLabel value="Sex" />
+                <h:outputLabel value="#{userBean.sex}" />
+            </h:panelGrid>
+            <h:messages/>
+        </h:form>
+    </h:body>
+</html>

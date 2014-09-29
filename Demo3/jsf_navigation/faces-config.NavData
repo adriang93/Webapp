@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="rules/static/from.xhtml" x="45" y="71" zoom="true"/>
+        <Node id="implicit/to.xhtml" x="290" y="390" zoom="true"/>
+        <Node id="index.xhtml" x="400" y="600" zoom="true"/>
+        <Node id="rules/dynamic/login.xhtml" x="209" y="176" zoom="true"/>
+        <Node id="rules/conditional/success.xhtml" x="1400" y="150" zoom="true"/>
+        <Node id="implicit/from.xhtml" x="351" y="58" zoom="true"/>
+        <Node id="rules/dynamic/success.xhtml" x="570" y="172" zoom="true"/>
+        <Node id="rules/conditional/main.xhtml" x="150" y="750" zoom="true"/>
+        <Node id="rules/dynamic/failure.xhtml" x="259" y="314" zoom="true"/>
+        <Node id="rules/conditional/failure.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="rules/static/to.xhtml" x="6" y="342" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

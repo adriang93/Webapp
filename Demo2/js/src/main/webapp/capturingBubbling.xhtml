@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+         Tracing Capture, Bubbling phases
+         Document Object Model (DOM) Level 3 Events Specification sec. 3.1.
+-->
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <script type="text/javascript" src="js/events/capturingBubbling.js" defer="defer"/>
+        <title>capturingBubbling.xhtml</title> 
+    </head>
+    <body>
+        <h1>Tracing event capturing, target and bubbling </h1>
+        <p>Click on the div's to see. Thanks to Brainjar.com</p>
+        <div id="A" style="background-color:#b0b0b0;border:1px solid #000000;padding:.5em;font-weight:bold;">
+            DIV A
+            <div id="B" style="background-color:#d0d0d0;border:1px solid #000000;padding:.5em;">
+                DIV B
+                <div id="C" style="background-color:#f0f0f0;border:1px solid #000000;padding:.5em;">
+                    DIV C
+                </div>
+            </div>
+        </div>
+        <p>
+            <textarea id="traceOut" rows="7" cols="50"></textarea>
+            <input type="button" id="btnClear" value="Clear" />
+        </p>
+    </body>
+</html>

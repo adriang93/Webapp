@@ -1,0 +1,21 @@
+<div>
+    <!--Body content-->
+    <h2>Call API</h2>
+    <p>Calls to private resource (/private)
+    <div class="view-container">
+        <div>
+            Info: {{ message }}
+        </div>
+        <div class="btn-group">
+            <input type="button" value="Call API (Put)" class="btn btn-default" ng-click="update()"/>     
+        </div>
+         <div class="btn-group">        
+            <input type="button" value="Call API (Get)" class="btn btn-default" ng-click="get()"/>
+            {{ returnvalue }}
+        </div>
+        <div class="btn-group">
+            <input type="button" value="Logout" class="btn btn-default" ng-click="logout()" ng-controller="LoginCtrl"/>
+        </div>
+    </div>
+</div>
+

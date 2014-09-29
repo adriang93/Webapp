@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title></title>
+    </h:head>
+    <h:body>
+        <h1>login.xhtml</h1>
+        <p>Some JSF pages and Beans working together</p>
+        <p>This page should be accessible for anyone.</p>
+        <h:form id="login-form">
+            <h:messages/>
+            <h:panelGrid columns="3">
+                <h:outputLabel for="id" value="Id (pelle/fia)"/>
+                <h:inputText value="#{authBean.id}" id="id"/>
+                <h:message for="id" />
+                <h:outputLabel for="password" value="Password (111)"/>
+                <h:inputSecret value="#{authBean.password}" id="password"/>  
+                <h:message for="password" />
+            </h:panelGrid> 
+            <h:commandButton id="button" value="Login" action="#{authBean.login}"/>                         
+        </h:form>
+    </h:body>
+</html>
+

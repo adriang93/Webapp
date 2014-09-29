@@ -1,0 +1,15 @@
+*** README HISTORY ***
+
+This shows the HTML5 history API and AJAX
+
+Select index.xhtml > View
+
+NOTE : Must set argument -allow-file-access-from-files for
+Chrome to allow loading local files with AJAX. Else run server.
+
+Everything works just fine EXCEPT browser refresh, have to
+handle server side (NOT FOUND).
+
+JQuery have problems parsing segments with xml declaration,
+leave it out.
+

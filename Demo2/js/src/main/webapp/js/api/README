@@ -1,0 +1,14 @@
+*** JavaScript API's ***
+
+NOTE: We we'll *NOT* use the native DOM-API (the most important API)
+or AJAX API (XmlHttpRequets object = XHR)
+
+Instead we use JQuery or better Angular. 
+
+All DOM/CSS manipulation and AJAX with JQuery.
+
+Advanced Html5 Web applications API's not here
+
+The only API used is the native String, see strings.js
+
+SUMMARY: This is empty

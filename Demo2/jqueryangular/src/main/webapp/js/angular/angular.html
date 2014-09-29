@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" ng-app="demoApp">  <!-- MUST HAVE -->
+    <head>
+        <meta charset="utf-8">
+        <title>Basic AngularJS Framwork Demo</title>
+        <script src="../lib/jquery.js"></script>
+        <script src="../lib/angular.js"></script>
+        <script src="../lib/angular-route.js"></script>
+        <script src="demoApp.js"></script>
+    </head>
+    <body ng-controller="demoCtrl">  <!-- MUST HAVE -->
+        <h1>Basic AngularJS Framwork (run JS debugger)</h1>
+        <div>
+            <span>Input your name</span>
+            <input ng-model="name" type="text" />
+            <input type="button" value="Action" ng-click="listeners.doClick($event)" />
+            <div id="holder"></div>
+        </div>
+        <hr/>
+        <div>
+            <!-- Automagically display ng-model -->
+            This is displayed automagically by Angular: {{name}}
+        </div>
+        <hr/>
+        <div>
+            Data set in controller
+            <table >
+                <thead><tr><td>Values</td></tr></thead>
+                <tr ng-repeat="value in someValues"><td> {{ value}}</td></tr>
+            </table>
+        </div>
+        <hr/> 
+        <div ng-view></div>
+    </body>
+</html>

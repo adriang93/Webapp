@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head> 
+        <title>Execution order</title>
+        <!-- Uncomment and test one at a time (try with/without defer="defer" (doesn't seem to work?) -->     
+        <!--<script type="text/javascript" src="js/core/executionOrderForJS.js" defer="defer"></script>-->
+    </head>
+    <body>
+        <h1>Execution order for JavaScript</h1>
+        <p>JavaScript read and executed in read order top-down (uncomment in source to check)</p>
+        <!--
+        
+             This is inline JS should be avoided!!
+        -->
+        <script type="text/javascript">
+            alert("Start");
+        </script>
+        <input type="button"  value="Just to see page load (not used)" /><br/>
+        <script type="text/javascript">
+            alert("In the middle");
+        </script>
+
+        <input type="button"  value="Just to see page load (not used)" />
+        <script type="text/javascript">
+            alert("At end");
+        </script>
+    </body>
+</html>

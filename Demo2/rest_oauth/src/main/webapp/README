@@ -1,0 +1,16 @@
+***  Using SocialAuth and Twitter for authentication***
+
+
+- Must have account on Twitter Developer 
+- Must register application at Twitter
+- It's possible with twitter to have localhost as callback URL **BUT*** 
+  most be written like 127.0.0.1 (on twitter, not used in application, see comments)
+- See Other Sources for config files
+
+*** This will possibly not run because of missing rights ****
+
+
+
+
+
+

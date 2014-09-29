@@ -1,0 +1,25 @@
+<div>
+    <!--Body content-->
+    <h2>Login</h2>
+    <div class="view-container">
+        <table class="table">
+            <tr>
+                <td>Name (qqq)</td>
+                <td>
+                    <input ng-model="user.name" type="text" value="{{user.name}}"/>
+                </td>
+            <tr>
+                <td>Passwd (111)</td>
+                <td>
+                    <input ng-model="user.passwd" type="password" value="{{user.passwd}}"/>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="btn-group">
+        <input type="button" value="Login" class="btn btn-default" ng-click="login()"/>
+    </div>
+    <p>Credentials are: {{user.name}} {{user.passwd}}</p>
+</div>
+

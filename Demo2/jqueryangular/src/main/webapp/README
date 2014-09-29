@@ -1,0 +1,8 @@
+*** README ***
+
+Normally browser reject loading local files
+using AJAX.
+In Chrome possible to specify usr/bin/chromium -allow-file-access-from-files
+
+If not working have to run server.
+
