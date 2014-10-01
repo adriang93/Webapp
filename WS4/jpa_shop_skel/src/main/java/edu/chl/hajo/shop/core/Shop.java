@@ -2,6 +2,8 @@ package edu.chl.hajo.shop.core;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.ejb.EJB;
+import javax.enterprise.context.ApplicationScoped;
 
 /**
  *
@@ -9,7 +11,10 @@ import java.util.logging.Logger;
  *
  * @author hajo
  */
-public final class Shop implements IShop {
+
+@EJB
+@ApplicationScoped
+public class Shop implements IShop {
 
     private final IProductCatalogue productCatalogue = ProductCatalogue.newInstance();
     private final ICustomerRegistry customerRegistry = CustomerRegistry.newInstance();

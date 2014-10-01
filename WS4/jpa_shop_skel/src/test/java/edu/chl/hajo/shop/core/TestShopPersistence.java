@@ -37,7 +37,7 @@ public class TestShopPersistence {
 
     @Deployment
     public static Archive<?> createDeployment() {
-        return ShrinkWrap.create(WebArchive.class, "test.war")
+        return ShrinkWrap.create(WebArchive.class, "shop.war")
                 // Add all classes
                 .addPackage("edu.chl.hajo.shop.core")
                 // This will add test-persitence.xml as persistence.xml (renamed)

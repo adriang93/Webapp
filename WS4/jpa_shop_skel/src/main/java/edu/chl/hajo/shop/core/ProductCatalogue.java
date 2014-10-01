@@ -1,24 +1,34 @@
 package edu.chl.hajo.shop.core;
 
-import edu.chl.hajo.shop.persistence.AbstractEntityContainer;
+import edu.chl.hajo.shop.persistence.AbstractDAO;
 import java.util.ArrayList;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 /**
  * All products
  *
  * @author hajo
  */
-@Named
-@ApplicationScoped
-public class ProductCatalogue extends AbstractEntityContainer<Product, Long>
+@Stateless
+public class ProductCatalogue extends AbstractDAO<Product, Long>
         implements IProductCatalogue {
 
-    private ProductCatalogue() {
+    public ProductCatalogue() {
+        super(Product.class);
     }
+    
+    @PersistenceContext
+    private EntityManager em;
 
+     @Override
+    public EntityManager getEntityManager() {
+        return em;
+    }
     // Factory method
     public static IProductCatalogue newInstance() {
         return new ProductCatalogue();

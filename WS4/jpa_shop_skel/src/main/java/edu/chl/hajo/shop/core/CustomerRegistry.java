@@ -1,15 +1,19 @@
 package edu.chl.hajo.shop.core;
 
-import edu.chl.hajo.shop.persistence.AbstractEntityContainer;
+import edu.chl.hajo.shop.persistence.AbstractDAO;
 import java.util.ArrayList;
 import java.util.List;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 /**
  * All customers
  *
  * @author hajo
  */
-public final class CustomerRegistry extends AbstractEntityContainer<Customer, Long>
+@Stateless
+public class CustomerRegistry extends AbstractDAO<Customer, Long>
         implements ICustomerRegistry {
 
     // Factory method
@@ -17,9 +21,18 @@ public final class CustomerRegistry extends AbstractEntityContainer<Customer, Lo
         return new CustomerRegistry();
     }
 
-    private CustomerRegistry() {
+    public CustomerRegistry() {
+        super(Customer.class);
     }
 
+    @PersistenceContext
+    private EntityManager em;
+
+     @Override
+    public EntityManager getEntityManager() {
+        return em;
+    }
+    
     @Override
     public List<Customer> getByName(String name) {
         List<Customer> found = new ArrayList<>();

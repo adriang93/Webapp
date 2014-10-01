@@ -1,15 +1,18 @@
 package edu.chl.hajo.shop.core;
 
+import javax.persistence.Entity;
+
 /**
  * An Address 
  * @author hajo
  */
+    
 public class Address {
 
     private final String street;
     private final int nbr;
     private final String town;
-
+  
     public Address(String street, int nbr, String town) {
         this.street = street;
         this.nbr = nbr;

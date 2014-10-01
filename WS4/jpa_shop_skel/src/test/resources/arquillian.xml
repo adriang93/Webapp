@@ -12,6 +12,7 @@
             <property name="resourcesXml">
                src/main/setup/glassfish-resources.xml   
             </property>
+            <property name="bindHttpPort">8282</property>
         </configuration>
     </container>
 </arquillian>

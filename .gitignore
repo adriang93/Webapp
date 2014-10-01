@@ -11,3 +11,11 @@
 /Demo3/component_based/target/
 /Demo3/jsf_request_cycle/target/
 /WS4/jpa_shop_skel/target/
+/Demo4/arquillian/target/
+/Demo4/ejb_sb/target/
+/Demo4/jpa_mapping/jpa_map_single/target/
+/Demo4/jpa_auth/target/
+/Demo4/jpa_managing/target/
+/Demo4/jpa_mapping/jpa_map_association/target/
+/Demo4/jpa_mapping/jpa_map_inherit_generic/target/
+/Demo4/jpa_query/target/

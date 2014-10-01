@@ -3,15 +3,23 @@ package edu.chl.hajo.shop.persistence;
 
 import java.io.Serializable;
 import java.util.Objects;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
 /**
  * Base class for all entities (later to be stored in database), 
  * Product, Order, etc
  * @author hajo
  */
-public abstract class AbstractEntity implements IEntity<Long>, Serializable{
+@MappedSuperclass
+public abstract class AbstractEntity implements Serializable{
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private final Long id; 
+    
     private static int counter = 1; 
    
     protected AbstractEntity(){
@@ -23,7 +31,6 @@ public abstract class AbstractEntity implements IEntity<Long>, Serializable{
         this.id = id;
     }
     
-    @Override
     public Long getId(){
         return id;
     }

@@ -1,0 +1,28 @@
+*** README Security ***
+
+This is the same as the jsf_auth sample but backed by a database
+(jdbc realm, NOT file realm)
+
+*** THIS CAN SEVERELY DAMAGE YOUR BRAIN ***
+Remember: clean and build, possible restart GlassFish
+(exception at login seems to trash all following attempts...??)
+Also see Default data below. 
+
+Database Setup
+---------------
+
+1. Needs a Derby database "test" (tables created by appl.)
+
+3. A Realm:
+Create one using
+Admin Console > Configurations > server Config > Security > Realms > New 
+Name: authRealm
+
+GlassFish setup
+---------------
+See folder glassfish
+
+Default data
+------------
+Must comment out on first run, see DefaultData.java
+

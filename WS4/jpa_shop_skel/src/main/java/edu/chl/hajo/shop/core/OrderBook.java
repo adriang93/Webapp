@@ -1,15 +1,19 @@
 package edu.chl.hajo.shop.core;
 
-import edu.chl.hajo.shop.persistence.AbstractEntityContainer;
+import edu.chl.hajo.shop.persistence.AbstractDAO;
 import java.util.ArrayList;
 import java.util.List;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 /**
  * All orders
  *
  * @author hajo
  */
-public final class OrderBook extends AbstractEntityContainer<PurchaseOrder, Long>
+@Stateless
+public final class OrderBook extends AbstractDAO<PurchaseOrder, Long>
         implements IOrderBook {
 
     // Factory method
@@ -17,7 +21,16 @@ public final class OrderBook extends AbstractEntityContainer<PurchaseOrder, Long
         return new OrderBook();
     }
 
-    private OrderBook() {
+    public OrderBook() {
+        super(PurchaseOrder.class);
+    }
+    
+    @PersistenceContext
+    private EntityManager em;
+
+     @Override
+    public EntityManager getEntityManager() {
+        return em;
     }
 
     @Override
