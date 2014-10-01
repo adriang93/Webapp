@@ -1,8 +1,0 @@
-mysqlpw:
-6ZaxN2Vzm9NUJT2y
-
-
-
-laravel.phar
-
-curl -O http://laravel.com/laravel.phar && chmod +x laravel.phar && mv laravel.phar /usr/local/bin/laravel
